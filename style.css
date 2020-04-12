@@ -1,7 +1,6 @@
 /*	
 *	To do: 
-*	The 'your choice' section should have a min-height
-*	Which should be 166.7px for my screen 
+*	
 */
 
 body {
@@ -53,6 +52,7 @@ nav {
 	border-right: 1.5px solid grey;
 	background-color: #f1f1f1;
 	/*grid-row: 1 / 3*/
+	grid-area: select;
 }
 
 nav h2 {
@@ -117,7 +117,8 @@ form {
 }
 
 .grid-3 {
-	height: 19.62vh;
+	min-height: 19.62vh; /*228.7*/ /*27.134vh*/
+	max-height: 31.167vh;
 	grid-template: repeat(3, 1fr) / auto auto auto;
 }
 
@@ -147,7 +148,10 @@ form {
 }
 
 .grid {	
-	grid-template: 5fr 3fr / 1fr 4fr 1fr;
+	grid-template: 5fr 3fr / 1fr 5fr;
+	grid-template-areas: 
+	"select	main"
+	"choice	choice";
 }
 
 .red {
@@ -155,8 +159,7 @@ form {
 }
 
 form {
-	grid-column: 2 / span 2;
-
+	grid-area: main;
 }
 
 .light-grey {
@@ -164,11 +167,12 @@ form {
 }
 
 .choice {
-	grid-column: 1 / span 3;
+	grid-area: choice;
 	border-top: 1.5px solid grey;
 	background-color: #f2f2f2;
 	padding-top: 1%;
-	min-height: 19.62vh;
+	min-height: 19.62vh; /*27.134vh*/ /*max- 262.23px*/
+	max-height: 31.167vh;
 }
 
 .choice div {
