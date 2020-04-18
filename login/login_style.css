@@ -1,0 +1,111 @@
+html, body {
+	box-sizing: border-box;
+	height: 100%;
+	font-family: sans-serif;
+}
+
+body {
+	position: relative;
+	width: 100vw;
+	margin: 0;
+	background-color: #3bb78f;
+	background-image: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);}
+
+.wrapper {
+	line-height: 3;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+	left: calc(50% - 40vw);
+	top: calc(50% - 40vh);
+	background-color: #f2f3f6;
+	height: 80vh;
+	width: 80vw;
+	text-align: center;
+	text-align: left;
+	border-radius: 1em;
+	/*box-shadow: 0 0 7px 3px rgba(0, 0, 0, 0.15);*/
+	font-size: 1.7em;
+	box-shadow: 0 3px 6px rgba(0, 0, 0, 0.25);
+}
+
+label {
+	color: #666;
+} 
+
+.container {
+	width: 60vw;
+}
+
+.label {
+	display: inline-block;
+	float: left
+	z-index: -1;
+}
+
+.input-field {
+	display: inline-block;
+	position: relative;
+	width: 30vw;
+	float: right;
+}
+
+input {
+	position: absolute;
+	font-size: 0.7em;
+	background-color: inherit;
+	border: none;
+	border-bottom: 1px solid grey;
+	width: 100%;
+	outline: none;
+	left: 0%;
+	bottom: 35%;
+}
+
+.underline {
+	display: block;
+	position: absolute;
+	bottom: 33%;
+	width: 0;
+	border-bottom: 2px solid blue;
+	transition: all ease-out 200ms;
+}
+
+input:focus ~ .underline {
+	width: 100%;
+}
+
+label.tooltip {
+	position: absolute;
+	bottom: 12%;
+	color: #ccc;
+	left: 0.1vw;
+	font-size: 0.8em;
+	cursor: text;
+	transition: all ease 200ms;
+}
+
+input:valid ~ .tooltip, input:focus ~ .tooltip {
+	color: blue;
+	bottom: 50%;
+	font-size: 0.6em;
+}
+
+select {
+	font-size: 0.8em;
+	background-color: unset;
+	border: none;
+	border-bottom: 1px solid grey;
+	outline: none;
+}
+
+select:focus {
+	border-bottom: 2px solid blue;
+}
+
+option
+{
+	font-family: Cambria, serif;
+}
