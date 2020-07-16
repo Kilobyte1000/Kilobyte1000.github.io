@@ -8,6 +8,20 @@ body {
     flex-direction: column;
     height: 100%;
 }
+
+@supports not(--css: variables) {
+    .content {
+        display: none;
+    }
+    body:before {
+        font-size: 4em;
+        justify-content: center;
+        align-content: center;
+        content: "SORRY! BROWSER NOT SUPPORTED. ONLY CHROME VERSIONS 49 AND ABOVE ARE SUPPORTED";
+        text-align: center;
+
+    }
+}
 .content {
     flex-grow: 1;
 }
