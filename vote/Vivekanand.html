@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>OPJMS Voting Page</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script type="text/javascript" src="tabs.js"></script>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <style>
+        :root {
+            --base-color: 240, 153, 19;
+            --border-color: #bb7d1e;
+            --highlight-color: 239, 175, 93;
+            --radio-color: #E18627;
+        }
+    </style>
+</head>
+<body onload="init()">
+    <section class="content">
+        <header>
+            <img src="download5.jpg" alt="School Logo" height="100">
+            <p>OP Jindal Modern School</p>
+        </header>
+
+        <section class="house text-center">
+                You are a student of <br>
+                <span>Vivekanand house</span> <br>
+                Please cast your vote
+        </section>
+        
+        <main>
+
+            <!-- Side Navigation -->
+            <nav>
+                <button id="houseButton" onclick="openTab(event, 'house_prefect_tab')"> House Prefect: </button>
+                <button id="sportsButton" onclick="openTab(event, 'sports_prefect_tab')"> Sports Prefect: </button>
+            </nav>
+        
+            <!-- Main area of selecting candidates -->
+            <form>
+
+                <!-- The House Prefect Tab -->
+                <section id="house_prefect_tab">
+
+                    <!-- The Boy Prefect Half -->
+                    <div>
+                        <h3>Boys Prefect</h3>
+
+                        <div class="vote-area">
+                            <div> 
+                                <input type="radio" id="house_boy_sourabh" name="kabir_house_boy" value="sourabh" onclick="writeHouseBoy(this)">
+                                <label for="house_boy_sourabh"> Sourabh</label>
+                            </div> 
+                            <br>
+
+                            <div> 
+                                <input type="radio" id="house_boy_keshav" name="kabir_house_boy" value="keshav" onclick="writeHouseBoy(this)">
+                                <label for="house_boy_keshav"> Keshav</label>
+                            </div> 
+                            <br>
+
+                            <div> 
+                                <input type="radio" id="house_boy_abhishek" name="kabir_house_boy" value="abhishek" onclick="writeHouseBoy(this)">
+                                <label for="house_boy_abhishek"> Abhishek</label>
+                            </div> 
+                            <br>
+
+                            <div> 
+                                <input type="radio" id="house_boy_mandeep" name="kabir_house_boy" value="mandeep" onclick="writeHouseBoy(this)">
+                                <label for="house_boy_mandeep"> This is a 32 character long name </label>
+                            </div> 
+                            <br> 
+                        </div>
+                    </div>
+
+                    <!-- The Girls Prefect Half -->
+                    <div>
+                        <h3>Girls Prefect</h3>
+
+                        <div class="vote-area">
+
+                            <div> 
+                                <input type="radio" id="house_girl_kashish" name="kabir_house_girl" value="kashish" onclick="writeHouseGirl(this)">
+                                <label for="house_girl_kashish"> Kashish </label>
+                            </div> 
+                            <br>
+
+                            <div> 
+                                <input type="radio" id="house_girl_meera" name="kabir_house_girl" value="meera" onclick="writeHouseGirl(this)">  
+                                <label for="house_girl_meera"> Meera </label>
+                            </div> 
+                            <br>
+
+                            <div> 
+                                <input type="radio" id="house_girl_bulbul" name="kabir_house_girl" value="bulbul" onclick="writeHouseGirl(this)">
+                                <label for="house_girl_bulbul"> Bulbul </label>
+                            </div>  
+                            <br>
+
+                            <div> 
+                                <input type="radio" id="house_girl_mokshita" name="kabir_house_girl" value="mokshita" onclick="writeHouseGirl(this)">
+                                <label for="house_girl_mokshita"> This is a 32 character long name </label>
+                            </div>
+                            <br>
+                        
+                        </div>
+                    </div>
+
+                </section>
+
+                <!-- The Sports Prefect Tab -->
+                <section id="sports_prefect_tab">
+
+                    <!-- The Boy Prefect Half -->
+                    <div>
+                        <h3>Boys Prefect</h3>
+
+                        <div class="vote-area">
+
+                            <div>
+                                <input type="radio" id="sports_boy_ram" name="kabir_sports_boy" value="ram" onclick="writeSportsBoy(this)">
+                                <label for="sports_boy_ram"> Ram</label>
+                            </div>
+                            <br>
+
+                            <div>
+                                <input type="radio" id="sports_boy_shyam" name="kabir_sports_boy" value="shyam" onclick="writeSportsBoy(this)">
+                                <label for="sports_boy_shyam"> Shyam</label>
+                            </div>
+                            <br>
+
+                            <div>
+                                <input type="radio" id="sports_boy_soham" name="kabir_sports_boy" value="soham" onclick="writeSportsBoy(this)">
+                                <label for="sports_boy_soham"> Soham</label>
+                            </div>
+                            <br>
+
+                            <div>
+                                <input type="radio" id="sports_boy_mohan" name="kabir_sports_boy" value="mohan" onclick="writeSportsBoy(this)">
+                                <label for="sports_boy_mohan"> Mohan </label>
+                            </div>
+                            <br>
+                        
+                        </div>
+                    </div>
+
+                    <!-- The Girls Prefect Half -->
+                    <div>
+                        <h3>Girls Prefect</h3>
+
+                        <div class="vote-area">
+
+                            <div>
+                                <input type="radio" id="sports_girl_radhika" name="kabir_sports_girl" value="radhika" onclick="writeSportsGirl(this)">
+                                <label for="sports_girl_radhika"> Radhika </label> 
+                            </div>
+                            <br>
+
+                            <div>
+                                <input type="radio" id="sports_girl_shruti" name="kabir_sports_girl" value="shruti" onclick="writeSportsGirl(this)">  
+                                <label for="sports_girl_shruti"> Shruti </label>
+                            </div>
+                            <br>
+
+                            <div>
+                                <input type="radio" id="sports_girl_ritika" name="kabir_sports_girl" value="ritika" onclick="writeSportsGirl(this)">
+                                <label for="sports_girl_ritika"> Ritika </label>
+                            </div>
+                            <br>
+
+                            <div>
+                                <input type="radio" id="sports_girl_tanya" name="kabir_sports_girl" value="tanya" onclick="writeSportsGirl(this)">
+                                <label for="sports_girl_tanya"> Tanya </label>
+                            </div>
+                            <br>
+                            
+                        </div>
+                    </div>
+
+                </section>
+
+            </form>
+
+        </main>
+
+        <aside>
+            <table>
+
+                <thead>
+                    <tr> <td></td> <th>Boy</th> <th>Girl</th>  </tr>
+                </thead>
+
+                <tbody>
+                    <tr>  <th>House Prefect:</th> <td id="house_boy">-</td> <td id="house_girl">-</td>   </tr>
+                    <tr>  <th>Sports Prefect:</th>  <td id="sports_boy">-</td> <td id="sports_girl">-</td>  </tr>
+                </tbody>
+
+            </table>
+        </aside>
+    </section>
+
+    <footer>
+        made by Keshav
+    </footer>
+</body>
+</html>
