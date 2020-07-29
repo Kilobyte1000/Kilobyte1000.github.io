@@ -100,7 +100,7 @@ nav button:focus {
 	text-decoration: underline;
 	text-decoration-style: dashed;
 	background-color: rgb(223,223,223);
-	outline-color: green;
+	outline-color: var(--border-color);
 }
 
 nav .active {
