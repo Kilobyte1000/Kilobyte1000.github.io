@@ -1,5 +1,6 @@
 html {
     height: 100%;
+    min-width: 753px;
 }
 body {
     margin: 0;
@@ -7,10 +8,11 @@ body {
     display: flex;
     flex-direction: column;
     height: 100%;
+    background: #fdfdfc
 }
 
-@supports not(--css: variables) {
-    body *{
+@supports not (--css: variables) {
+    body > *{
         display: none;
     }
     body:before {
@@ -22,6 +24,74 @@ body {
 
     }
 }
+/* css variable styles for each house */
+
+body.kabir{
+    --base-color: 119,221,119;
+    --border-color: #249225;
+    --highlight-color: 81,213,81;
+    --radio-color: #3D933D;
+    --button-color: #139056;
+    --shadow-color: 8, 94, 54;
+}
+
+body.raman{
+    --base-color:125,99,218;
+    --border-color:#802db9;
+    --highlight-color:194,133,222;
+    --radio-color:#Aa32c3;
+    --button-color: #a013b9;
+    --shadow-color: 99, 7, 115;
+
+}
+
+body.tagore{
+    --base-color: 240, 117, 117;
+    --border-color: #f44336;
+    --highlight-color: 248, 122, 122;
+    --radio-color: #D13438;
+    --button-color: #c35146;
+    --shadow-color: 171, 54, 43;
+
+}
+
+body.tilak{
+    --base-color: 3, 169, 244;
+    --border-color: #1976d2;
+    --highlight-color: 3, 155, 229;
+    --radio-color: #1565C0;
+    --button-color: #285d95;
+    --shadow-color: 25, 72, 123;
+}
+
+body.vashishth{
+    --base-color: 222, 227, 54;
+    --border-color: #929443;
+    --highlight-color: 230, 220, 58;
+    --radio-color: #f7b400;
+    --button-color: #baa738;
+    --shadow-color: 171, 152, 43;
+
+}
+
+/* Yellow also needs text shadow */
+
+body.vashishth input:checked + label, body.vashishth #submit {
+    text-shadow: 1px 1px 3px rgb(0 0 0 / 0.32);
+}
+
+
+body.vivekanand{
+    --base-color: 240, 153, 19;
+    --border-color: #bb7d1e;
+    --highlight-color: 239, 175, 93;
+    --radio-color: #E18627;
+    --button-color: #c88232;
+    --shadow-color: 180, 112, 34;
+}
+
+
+
 .content {
     flex-grow: 1;
 }
@@ -119,13 +189,16 @@ form > section {
     text-align: center;
 }
 
-form > section.visible {
-    display: block;
+.visible {
+    display: block !important;
 }
 
 form > section > div {
     width: 50%;
-    float: left;
+    display: inline-block;
+    vertical-align: text-top;
+    margin-left: -1%;
+    margin-bottom: 1.1em;
 }
 
 form h3 {
@@ -147,7 +220,9 @@ aside {
     width: 100%;
     min-height: 24vh;
 
-    border-top: 1.5px solid gray;
+    border: 1.5px solid gray;
+    border-width: 1.5px 0;
+
     background: #f1f1f1;
 }
 
@@ -230,4 +305,31 @@ input:focus + label, label:hover {
 
 input:focus + label {
 	outline: solid var(--border-color) 1px;
+}
+
+.button {
+    color: white;
+    background: var(--button-color);
+
+    border: none;
+
+    font-size: 0.8em;
+    display: none;
+
+    margin: auto;
+    padding: 0.7em 1.4em;
+    border-radius: 0.2em;
+    transition: all 300ms ease;
+
+    box-shadow: 1px 7px 9px 3px rgba(var(--shadow-color), 0.42);
+}
+
+.button:focus {
+    outline: var(--border-color) 2px solid;
+}
+
+.button:active {
+    outline: none;
+    box-shadow: 1px 7px 9px -6px rgba(var(--shadow-color), 0.42);
+    transform: translateY(6%);
 }

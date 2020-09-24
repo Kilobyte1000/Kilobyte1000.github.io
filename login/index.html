@@ -11,6 +11,13 @@
 			if( key == 69 || (key >=107  && key <= 110) || (key >= 187 && key <= 190) )
 				e.preventDefault();
 		}
+		function goToVotePage(event) {
+			event.preventDefault();
+			var select = document.getElementById('select-house');
+			var house = select.options[select.selectedIndex].value;
+
+			window.location.href = "kilobyte1000.github.io/vote"+house".html";
+		}
 	</script>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -25,9 +32,12 @@
 
 	<main>
 		
-		<form action="..\vote\Kabir.html" method="POST">
+		<form onsubmit="goToVotePage(event)">
 
-			<section>
+			<p id="errPara">
+			</p>
+
+			<section id="main">
 
 				<!-- Admission No. Field -->
 				<div class="container">
@@ -102,9 +112,31 @@
 
 				</div>
 
+				<div class="container">
+					
+					<div class="label">
+						<label for="select-house">House </label>
+					</div>
+
+					<div class="input-field">
+						<select id="select-house" name="house" required>
+							<option value="" selected>-</option>
+							<option value="Kabir">Kabir</option>
+							<option value="Raman">Raman</option>
+							<option value="Tagore">Tagore</option>
+							<option value="Tilak">Tilak</option>
+							<option value="Vashishth">Vashishth</option>
+							<option value="Vivekanand">Vivekanand</option>
+						</select>
+					</div>
+
+				</div>
+
 			</section>
 
-			<input type="submit" class="button" value="Go To Voting Page">
+			<a href="sdf">
+				<button class="button">Go To Voting Page</button>
+			</a>
 
 		</form>
 
@@ -114,6 +146,8 @@
 	<footer>
 		Made by Keshav	
 	</footer>
+
+	<script type="text/javascript" src="errShow.js"></script>
 
 </body>
 </html>

@@ -3,19 +3,10 @@
 <head>
     <title>OPJMS Voting Page</title>
     <link rel="stylesheet" type="text/css" href="style.css">
-    <script type="text/javascript" src="tabs.js"></script>
 	<meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <style>
-        :root {
-            --base-color: 125, 99, 218; 
-            --border-color: #802db9;
-            --highlight-color: 194, 133, 222;
-            --radio-color: #Aa32c3;
-        }
-    </style>
 </head>
-<body onload="init()">
+<body class="raman">
     <section class="content">
         <header>
             <img src="download5.jpg" alt="School Logo" height="100">
@@ -24,7 +15,7 @@
 
         <section class="house text-center">
                 You are a student of <br>
-                <span>Raman house</span> <br>
+                <span>raman house</span> <br>
                 Please cast your vote
         </section>
         
@@ -37,7 +28,7 @@
             </nav>
         
             <!-- Main area of selecting candidates -->
-            <form>
+            <form method="POST">
 
                 <!-- The House Prefect Tab -->
                 <section id="house_prefect_tab">
@@ -47,29 +38,7 @@
                         <h3>Boys Prefect</h3>
 
                         <div class="vote-area">
-                            <div> 
-                                <input type="radio" id="house_boy_sourabh" name="kabir_house_boy" value="sourabh" onclick="writeHouseBoy(this)">
-                                <label for="house_boy_sourabh"> Sourabh</label>
-                            </div> 
-                            <br>
-
-                            <div> 
-                                <input type="radio" id="house_boy_keshav" name="kabir_house_boy" value="keshav" onclick="writeHouseBoy(this)">
-                                <label for="house_boy_keshav"> Keshav</label>
-                            </div> 
-                            <br>
-
-                            <div> 
-                                <input type="radio" id="house_boy_abhishek" name="kabir_house_boy" value="abhishek" onclick="writeHouseBoy(this)">
-                                <label for="house_boy_abhishek"> Abhishek</label>
-                            </div> 
-                            <br>
-
-                            <div> 
-                                <input type="radio" id="house_boy_mandeep" name="kabir_house_boy" value="mandeep" onclick="writeHouseBoy(this)">
-                                <label for="house_boy_mandeep"> This is a 32 character long name </label>
-                            </div> 
-                            <br> 
+                            <div><input type="radio"id="house_boy_sourabh"name="kabir_house_boy"value="sourabh"onclick="writeHouseBoy(this)"reqired><label for="house_boy_sourabh">Sourabh</label></div><br><div><input type="radio"id="house_boy_keshav"name="kabir_house_boy"value="keshav"onclick="writeHouseBoy(this)"><label for="house_boy_keshav">Keshav</label></div><br><div><input type="radio"id="house_boy_abhishek"name="kabir_house_boy"value="abhishek"onclick="writeHouseBoy(this)"><label for="house_boy_abhishek">Abhishek</label></div><br><div class="last-choice"><input type="radio"id="house_boy_manav"name="kabir_house_boy"value="manav"onclick="writeHouseBoy(this)"><label for="house_boy_manav">Manav</label></div><br>
                         </div>
                     </div>
 
@@ -80,7 +49,7 @@
                         <div class="vote-area">
 
                             <div> 
-                                <input type="radio" id="house_girl_kashish" name="kabir_house_girl" value="kashish" onclick="writeHouseGirl(this)">
+                                <input type="radio" id="house_girl_kashish" name="kabir_house_girl" value="kashish" onclick="writeHouseGirl(this)" required>
                                 <label for="house_girl_kashish"> Kashish </label>
                             </div> 
                             <br>
@@ -97,7 +66,7 @@
                             </div>  
                             <br>
 
-                            <div> 
+                            <div class="last-choice"> 
                                 <input type="radio" id="house_girl_mokshita" name="kabir_house_girl" value="mokshita" onclick="writeHouseGirl(this)">
                                 <label for="house_girl_mokshita"> This is a 32 character long name </label>
                             </div>
@@ -118,7 +87,7 @@
                         <div class="vote-area">
 
                             <div>
-                                <input type="radio" id="sports_boy_ram" name="kabir_sports_boy" value="ram" onclick="writeSportsBoy(this)">
+                                <input type="radio" id="sports_boy_ram" name="kabir_sports_boy" value="ram" onclick="writeSportsBoy(this)" required>
                                 <label for="sports_boy_ram"> Ram</label>
                             </div>
                             <br>
@@ -135,11 +104,10 @@
                             </div>
                             <br>
 
-                            <div>
+                            <div class="last-choice">
                                 <input type="radio" id="sports_boy_mohan" name="kabir_sports_boy" value="mohan" onclick="writeSportsBoy(this)">
                                 <label for="sports_boy_mohan"> Mohan </label>
                             </div>
-                            <br>
                         
                         </div>
                     </div>
@@ -151,7 +119,7 @@
                         <div class="vote-area">
 
                             <div>
-                                <input type="radio" id="sports_girl_radhika" name="kabir_sports_girl" value="radhika" onclick="writeSportsGirl(this)">
+                                <input type="radio" id="sports_girl_radhika" name="kabir_sports_girl" value="radhika" onclick="writeSportsGirl(this)" required>
                                 <label for="sports_girl_radhika"> Radhika </label> 
                             </div>
                             <br>
@@ -168,16 +136,21 @@
                             </div>
                             <br>
 
-                            <div>
+                            <div class="last-choice">
                                 <input type="radio" id="sports_girl_tanya" name="kabir_sports_girl" value="tanya" onclick="writeSportsGirl(this)">
                                 <label for="sports_girl_tanya"> Tanya </label>
                             </div>
-                            <br>
                             
                         </div>
                     </div>
 
                 </section>
+
+                <div>
+                    <button id="submit" class="button">Cast Your Vote <div></div></button>
+                </div>
+
+                <script type="text/javascript">let house="kabir"</script>
 
             </form>
 
@@ -202,5 +175,8 @@
     <footer>
         made by Keshav
     </footer>
+
+    <script type="text/javascript" src="tabs.js"></script>
+
 </body>
 </html>

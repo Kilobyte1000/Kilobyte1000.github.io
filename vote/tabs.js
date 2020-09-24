@@ -1,15 +1,16 @@
-var sportsTab, houseTab;
-var houseButton, sportsButton
+let houseTab = document.getElementById("house_prefect_tab");
+let sportsTab = document.getElementById("sports_prefect_tab");
+let houseButton = document.getElementById("houseButton");
+let sportsButton = document.getElementById("sportsButton");
 
-function init() {
-	houseTab = document.getElementById("house_prefect_tab");
-	sportsTab = document.getElementById("sports_prefect_tab");
+houseButton.click();
 
-	houseButton = document.getElementById("houseButton");
-	sportsButton = document.getElementById("sportsButton");
+choiceSelected=0;
 
-	houseButton.click();
-}
+houseBoySelected=false;
+houseGirlSelected=false;
+SportsBoySelected=false;
+SportsGirlSelected=false;
 
 function openTab(evt, tabName) {
 
@@ -30,16 +31,40 @@ function openTab(evt, tabName) {
 
 function writeHouseBoy(el) {
 	document.getElementById("house_boy").innerHTML = el.nextElementSibling.innerHTML;
+	if(!houseBoySelected) {
+		houseBoySelected = true
+		ifAllSelectedVisible()
+	}
 }
 
 function writeHouseGirl(el) {
 	document.getElementById("house_girl").innerHTML = el.nextElementSibling.innerHTML;
+	if (!houseGirlSelected) {
+		houseGirlSelected = true
+		ifAllSelectedVisible()
+	}
 }
 
 function writeSportsBoy(el) {
 	document.getElementById("sports_boy").innerHTML = el.nextElementSibling.innerHTML;
+	if (!SportsBoySelected) {
+		SportsBoySelected = true
+		ifAllSelectedVisible()
+	}
 }
 
 function writeSportsGirl(el) {
 	document.getElementById("sports_girl").innerHTML = el.nextElementSibling.innerHTML;
+	if (!SportsGirlSelected) {
+		SportsGirlSelected = true
+		ifAllSelectedVisible()
+	}
+}
+
+function ifAllSelectedVisible() {
+	if (choiceSelected == 3) {
+		document.getElementById('submit').style.display = 'block';
+	} else {
+		choiceSelected++
+	}
 }
