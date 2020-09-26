@@ -4,6 +4,7 @@ html {
 	margin: 0;
 	box-sizing: border-box;
 	min-width: 800px;
+	min-height: 520px; 
 }
 
 body {
@@ -47,7 +48,7 @@ main {
 
 form {
 	width: 70%;
-	height: 70%;
+	min-height: 65%;
 
 	background: #f2f3f6;
 	border-radius: 1.8em;
@@ -60,7 +61,14 @@ form {
 	box-shadow: 0 3px 6px rgba(0, 0, 0, 0.25);
 
 	font-family: sans-serif;
+	padding: 1em 0;
 }
+
+p {
+	color: #c83c32;
+	font-size: 1.2em;
+}
+
 
 form section {
 	width: 100%;
@@ -178,6 +186,7 @@ option
     border: 0;
     transition: all 300ms ease;
     box-shadow: 1px 7px 9px 3px hsl(152 84% 20% / 0.42);
+	margin-top: 0.2em;
 }
 
 .button:hover {
