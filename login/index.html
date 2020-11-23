@@ -5,12 +5,14 @@
 	<title>Login</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<script type="text/javascript">
+
 		function validateInput(argument) {
 			var e = event || window.event;  
   			var key = e.keyCode || e.which; 
 			if( key == 69 || (key >=107  && key <= 110) || (key >= 187 && key <= 190) )
 				e.preventDefault();
 		}
+
 		function goToVotePage(event) {
 			event.preventDefault();
 			var select = document.getElementById('select-house');
@@ -79,11 +81,6 @@
 					<div class="input-field">
 						<select id="select-class" name="class" required>
 							<option value="" selected>-</option>
-							<option value="1">I</option>
-							<option value="2">II</option>
-							<option value="3">III</option>
-							<option value="4">IV</option>
-							<option value="5">V</option>
 							<option value="6">VI</option>
 							<option value="7">VII</option>
 							<option value="8">VIII</option>
@@ -117,7 +114,7 @@
 					<div class="label">
 						<label for="select-house">House </label>
 					</div>
-
+				
 					<div class="input-field">
 						<select id="select-house" name="house" required>
 							<option value="" selected>-</option>
@@ -129,14 +126,26 @@
 							<option value="Vivekanand">Vivekanand</option>
 						</select>
 					</div>
-
+				
 				</div>
+				
+				<!-- <div class="container">
+					
+					<div class="label">
+						<label for="test_field">lorem</label>
+					</div>
+				
+					<div class="input-text-field">
+						<input id="test_field" type="text" name="first-name" placeholder=" " autocomplete="off"title="Only english alphabets are accepted. The name should not be longer than 64 characters" pattern="[a-zA-Z]{1,64}" required />
+						<label for="test_field" class="tooltip">First Name</label>
+						<div class="underline"></div>
+					</div>
+				
+				</div> -->
 
 			</section>
 
-			<a href="sdf">
-				<button class="button">Go To Voting Page</button>
-			</a>
+			<button class="button">Go To Voting Page</button>
 
 		</form>
 
