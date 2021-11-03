@@ -49,3 +49,9 @@ p.left {
   margin-top: 3em;
   text-align: right;
 }
+p.mono {
+  font-size: 1.2em;
+  margin-top: 3em;
+  font-family: 'JetBrains Mono', monospace;
+  text-align: right;
+}
