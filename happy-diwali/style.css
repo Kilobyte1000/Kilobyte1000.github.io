@@ -5,6 +5,7 @@ html {
 body {
   margin: 0;
   background: #020202;
+  padding-bottom: 2em;
 }
 
 canvas {
@@ -28,10 +29,9 @@ h1 {
   text-align: center;
 
   color: #dedede;
-  /*font-family: "Source Sans Pro","arial", sans-serif;*/
   font-family: 'Montserrat', system-ui;
   font-size: 5em;
-  font-weight: 900;
+  font-weight: 600;
   -webkit-user-select: none;
   user-select: none;
 
