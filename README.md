@@ -1,3 +1,3 @@
 # Kilobyte1000.github.io
 
-Miscellaneous things. Expect to be confused.
+Miscellaneous personal things. Expect to be confused.
