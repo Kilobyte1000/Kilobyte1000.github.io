@@ -1,0 +1,57 @@
+html {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: #020202;
+  padding-bottom: 2em;
+}
+
+canvas {
+  display: block;
+  position: fixed;
+  z-index: -1;
+  height: 100%;
+  width: 100%;
+}
+
+.outer section {
+	width: 80%;
+	margin: 0 auto;
+}
+
+.outer {
+  cursor: crosshair;
+}
+
+h1 {
+  text-align: center;
+
+  color: #dedede;
+  font-family: 'Montserrat', system-ui;
+  font-size: 5em;
+  font-weight: 600;
+  -webkit-user-select: none;
+  user-select: none;
+
+  margin-bottom: 1.5em;
+}
+p {
+  font-family: 'Courgette', cursive;
+  text-align: center;
+  color: #dbdbdb;
+  font-size: 2em;
+  margin: 0 auto;
+}
+p.left {
+  font-size: 1.2em;
+  margin-top: 3em;
+  text-align: right;
+}
+p.mono {
+  font-size: 1.2em;
+  margin-top: 3em;
+  font-family: 'JetBrains Mono', monospace;
+  text-align: right;
+}
